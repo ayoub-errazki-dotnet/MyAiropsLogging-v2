@@ -10,7 +10,7 @@ namespace Client.Microservice.Controllers
     public class ClientController : ControllerBase
     {
         private readonly HttpClient _httpClient;
-        private const string _loggingServiceUrl = "http://localhost:5208/api/logging";
+        private const string _loggingServiceUrl = "http://logging.microservice:5208/api/logging";
 
         public ClientController(HttpClient httpClient)
         {
@@ -38,7 +38,7 @@ namespace Client.Microservice.Controllers
                 if (!response.IsSuccessStatusCode)
                     return StatusCode((int)response.StatusCode, response.ReasonPhrase);
 
-                return Ok(content);
+                return Ok($"{log.Message} Sent successfuly");
             }
             catch (System.Exception ex)
             {

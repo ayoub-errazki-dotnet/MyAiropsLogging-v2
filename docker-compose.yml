@@ -1,0 +1,30 @@
+services:
+  logging.microservice:
+    image: ${DOCKER_REGISTRY-}loggingmicroservice
+    build:
+      context: .
+      dockerfile: Logging.Microservice/Dockerfile
+    environment:
+        ASPNET_CORE_ENVIRONMENT: Development
+        ASPNETCORE_URLS: http://+:5208
+    ports:
+        - "5208:5208"
+    networks:
+        - logsnetwork
+
+  client.microservice:
+    image: ${DOCKER_REGISTRY-}clientmicroservice
+    build:
+      context: .
+      dockerfile: Client.Microservice/Dockerfile
+    environment:
+        ASPNET_CORE_ENVIRONMENT: Development
+        ASPNETCORE_URLS: http://+:5215
+    ports:
+        - "5215:5215"
+    networks:
+        - logsnetwork
+
+networks:
+    logsnetwork:
+        driver: bridge

@@ -4,6 +4,7 @@ using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 builder.Services.AddControllers();
 
 Log.Logger = new LoggerConfiguration()
@@ -18,6 +19,7 @@ var startingMessage = "Application [LoggingMicroservice] started";
 Log.Logger.Information(startingMessage);
 
 var app = builder.Build();
+
 app.MapControllers();
 
 app.MapGet("/", () => startingMessage);

@@ -9,13 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Microservice.Tests"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Microservice", "Client.Microservice\Client.Microservice.csproj", "{EE8C89D7-0EE5-497A-9B28-11F80A3A380C}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{24EA3D28-9205-4117-9765-C6F23385C020}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{2E2D83A0-4B8E-4BB9-9743-B625F2C9C4CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -30,5 +29,12 @@ Global
 		{EE8C89D7-0EE5-497A-9B28-11F80A3A380C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE8C89D7-0EE5-497A-9B28-11F80A3A380C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE8C89D7-0EE5-497A-9B28-11F80A3A380C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24EA3D28-9205-4117-9765-C6F23385C020}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24EA3D28-9205-4117-9765-C6F23385C020}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24EA3D28-9205-4117-9765-C6F23385C020}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24EA3D28-9205-4117-9765-C6F23385C020}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
