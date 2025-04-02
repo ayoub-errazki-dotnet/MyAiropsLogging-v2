@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Client.Microservice.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/simulatefakelog")]
     [ApiController]
     public class ClientController : ControllerBase
     {
@@ -24,7 +24,10 @@ namespace Client.Microservice.Controllers
                 if (string.IsNullOrEmpty(message) || string.IsNullOrEmpty(level))
                     return BadRequest("Message and level are required");
 
-                var levelEnum = Enum.Parse<Level>(level, true);
+                if (!Enum.TryParse<Level>(level, true, out var levelEnum))
+                    return BadRequest("Invalid log level");
+
+
                 var log = new LogDto
                 {
                     Id = Guid.NewGuid(),
